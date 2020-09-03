@@ -1,6 +1,9 @@
 # Double Shot Audio Multitool
 
-Multitool developed for a few video-audio related workflow as a C++ learning project. **Please pardon all the beginner programmer's mistake!**
+Alpha 1 Download: [Here](https://gitlab.com/DoubleShotAudio/double-shot-audio-multitool/-/releases)\
+*(Download DSA Multitool in "Packages" to have .exe file)*
+
+Multitool is developed for a few video-audio related workflow as a C++ learning project. **Please pardon all the beginner programmer's mistake!**
 At this moment this is a Windows-Only application. MacOS will follow in the future hopefully.
 
 ***You have to have ffmpeg installed and configured to be used as a command in the command line to make this program to work.***
