@@ -136,8 +136,8 @@ int main()
     std::cout << "Tools selection: \n";
     std::cout << "1. Video Converter for Nuendo / Cubase \n";
     std::cout << "2. Audio Extractor \n";
-    std::cout << "3. Audio Replacer in Video (MOV with WAV) \n";
-    std::cout << "4. Audio Replacer in Video (MP4 with AAC) \n\n";
+    std::cout << "3. Audio Replacer for Video (MOV container with WAV) \n";
+    std::cout << "4. Audio Replacer for Video (MP4 container with AAC) \n\n";
 
     std::cout << "Input your selection : ";
    
