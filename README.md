@@ -8,26 +8,23 @@ FFMpeg Download and setup in Windows: [Link](https://video.stackexchange.com/que
 
 ## Features
 1. Video converter for Cubase / Nuendo to accomodate frame-per-frame scrubbing
-    - Does not change the original codec nor the resolution thus avoiding re-encoding
-    - Will set B Frames number to zero and set every frame as a keyframe with `-bf 0` and `-g 1`
-
+   * Does not change the original codec nor the resolution thus avoiding re-encoding
+   * Sets B Frames number to zero and makes every frame as a keyframe with `-bf 0` and `-g 1`
 2. Audio Extractor
-    - Will extract audio out of a video file in WAV 24 bit format
-
+   * Extracts audio out of a video file in WAV 24 bit format
 3. Audio Replacer for Video (MOV container with WAV)
-    - will replace audio in the video with PCM 24bit codec quality regardless of source audio file
-    - will change the video container to MOV to accomodate PCM codec
-
+   * Replaces audio in the video with PCM 24bit codec quality regardless of source audio file
+   * Changes the video container to MOV to accomodate PCM codec
 4. Audio Replacer for Video (MP4 container with AAC)
-    - will replace audio in the video with AAC codec regardless of source audio file
-    - will use MP4 video container
+   * Replaces audio in the video with AAC codec regardless of source audio file
+   * Use MP4 video container
 
 ## Planned Feature
 1. Ambisonic Audio to Video embedder
 2. MacOS Build
 
------------------------------------------------------------------------
-Best,
-Indra
-Double Shot Audio
+--------------------------------------------------------------------------------------------------------------
+Best,\
+Indra\
+Double Shot Audio\
 indra@doubleshot-audio.com
