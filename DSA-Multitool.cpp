@@ -203,12 +203,7 @@ int main()
 		case 4:
 			CombineVideoAudioAac();
 			break;
-		case 5:
-			CheckFfmpeg();
-			break;
 		}
-
-
 
 		std::cout << "Program has ended. \n";
 		system("pause");
