@@ -7,7 +7,6 @@
 #include <string>       // std::string
 #include <algorithm>    // std::search
 #include <vector>
-#include <windows.h>
 
 
 // Variable Init
@@ -128,6 +127,24 @@ void CombineVideoAudioAac()
 	system(("ffmpeg -i " + sVideoFile + " -i " + sAudioFile + " -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac " + sResultFileNewFormat(sVideoFile, sAppend)).c_str());
 }
 
+void ConvertAudioToMp3()
+{
+	std::string sAppend = ".mp3\"";
+
+	std::cout << "Please drag and drop the audio file to convert to mp3 :\n";
+	std::getline(std::cin, sAudioFile);
+
+	while ((sAudioFile.at(0) != cStringCheck) || sAudioFile.length() < 4)
+	{
+		std::cout << "ERROR: Invalid input \n" << "Please drag and drop the video file to convert :\n";
+		std::cin.clear();
+
+		std::getline(std::cin, sAudioFile);
+	}
+
+	system(("ffmpeg -i " + sAudioFile + " -c:a libmp3lame -q:a 2 " + sResultFileNewFormat(sAudioFile, sAppend)).c_str());
+}
+
 bool CheckFfmpeg()
 {
 	std::string sSearchString = "ffmpeg";
@@ -176,7 +193,8 @@ int main()
 		std::cout << "1. Video Converter for Nuendo / Cubase \n";
 		std::cout << "2. Audio Extractor \n";
 		std::cout << "3. Audio Replacer for Video (MOV container with WAV) \n";
-		std::cout << "4. Audio Replacer for Video (MP4 container with AAC) \n\n";
+		std::cout << "4. Audio Replacer for Video (MP4 container with AAC) \n";
+		std::cout << "5. WAV to MP3 converter (VBR 192k) \n\n";
 
 		std::cout << "Input your selection : ";
 
@@ -202,6 +220,12 @@ int main()
 			break;
 		case 4:
 			CombineVideoAudioAac();
+			break;
+		case 5:
+			ConvertAudioToMp3();
+			break;
+		default:
+			std::cout << "This is not a valid option!";
 			break;
 		}
 
