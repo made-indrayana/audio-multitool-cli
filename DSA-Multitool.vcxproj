@@ -144,7 +144,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DSA-Multitool.cpp" />
+    <ClCompile Include="Multitool-Actions.cpp" />
+    <ClCompile Include="Multitool-Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Multitool-Actions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
