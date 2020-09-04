@@ -21,6 +21,7 @@ FFMpeg Download and setup in Windows: [Link](https://video.stackexchange.com/que
 4. Audio Replacer for Video (MP4 container with AAC)
    * Replaces audio in the video with AAC codec regardless of source audio file
    * Use MP4 video container
+5. WAV to MP3 converter (VBR 192k Quality)
 
 ## Planned Feature
 1. Batch converting (right now it only supports one file per process and terminates)
