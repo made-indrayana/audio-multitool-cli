@@ -23,8 +23,9 @@ FFMpeg Download and setup in Windows: [Link](https://video.stackexchange.com/que
    * Use MP4 video container
 
 ## Planned Feature
-1. Ambisonic Audio to Video embedder
-2. MacOS Build
+1. Batch converting (right now it only supports one file per process and terminates)
+2. Ambisonic Audio to Video embedder
+3. MacOS Build
 
 --------------------------------------------------------------------------------------------------------------
 Best,\
