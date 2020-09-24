@@ -105,9 +105,11 @@ int main()
 			ConvertAudioToMp3();
 			break;
 		default:
-			std::cout << "This is not a valid option! \n";
+			std::cout << "This is not a valid option! \n"; //TODO: when invalid selection is entered, ask user to input again
 			break;
 		}
+
+		//TODO: When program ends here, loop back to title.
 
 		std::cout << "Program has ended. \n";
 		system("pause");
