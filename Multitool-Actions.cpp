@@ -23,6 +23,11 @@ using namespace GlobalVariable;
 
 // FUNCTIONS START HERE -------------------------------------------------------------------------------------------------------------------------------
 
+void FfmpegFinished()
+{
+	std::cout << "FFmpeg finished converting\n\n";
+}
+
 void ConvertVideo()
 {
 	std::string sAppend = "-Nuendo";
@@ -40,6 +45,7 @@ void ConvertVideo()
 	}
 
 	system(("ffmpeg -i " + sVideoFile + " -bf 0 -g 1 " + sResultFile(sVideoFile, sAppend)).c_str());
+	FfmpegFinished();
 }
 
 void ExtractAudio()
@@ -58,6 +64,7 @@ void ExtractAudio()
 	}
 
 	system(("ffmpeg -i " + sVideoFile + " -vn -c:a pcm_s24le " + sResultFileNewFormat(sVideoFile, sAppend)).c_str());
+	FfmpegFinished();
 }
 
 void CombineVideoAudioWav()
@@ -87,6 +94,7 @@ void CombineVideoAudioWav()
 	}
 
 	system(("ffmpeg -i " + sVideoFile + " -i " + sAudioFile + " -map 0:v:0 -map 1:a:0 -c:v copy -c:a copy " + sResultFileNewFormat(sVideoFile, sAppend)).c_str());
+	FfmpegFinished();
 }
 
 void CombineVideoAudioAac()
@@ -101,6 +109,7 @@ void CombineVideoAudioAac()
 	std::getline(std::cin, sAudioFile);
 
 	system(("ffmpeg -i " + sVideoFile + " -i " + sAudioFile + " -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac " + sResultFileNewFormat(sVideoFile, sAppend)).c_str());
+	FfmpegFinished();
 }
 
 void ConvertAudioToMp3()
@@ -119,4 +128,6 @@ void ConvertAudioToMp3()
 	}
 
 	system(("ffmpeg -i " + sAudioFile + " -c:a libmp3lame -q:a 2 " + sResultFileNewFormat(sAudioFile, sAppend)).c_str());
+	FfmpegFinished();
 }
+

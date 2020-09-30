@@ -18,6 +18,7 @@ void ExtractAudio();
 void CombineVideoAudioWav();
 void CombineVideoAudioAac();
 void ConvertAudioToMp3();
+void FfmpegFinished();
 
 
 

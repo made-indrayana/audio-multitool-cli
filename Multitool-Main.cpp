@@ -7,8 +7,8 @@
 void showTitle()
 {
 	std::cout << R"(
-        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
                                                                                            
              ((((                                                                          
             ((((     _______       _______.     ___                                        
@@ -19,8 +19,8 @@ void showTitle()
           : .___, : |_______/ |_______/    /__/     \__\ \_ (_) (_| (/_ \/\/ (_) |  |< _>  
            `-----'                                                                         
                                                                                            
-        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 )";
 	std::cout << '\n';
 }
@@ -45,7 +45,7 @@ bool CheckFfmpeg()
 	std::size_t found = sToSearch.find(sSearchString);
 	if (found != std::string::npos)
 	{
-		std::cout << "FFmpeg Found!" << '\n' << '\n';
+		//std::cout << "FFmpeg Found!" << '\n' << '\n'; // ONLY FOR DEBUGGING
 		free(pValue); // free buffer again
 		return true;
 	}
@@ -59,68 +59,70 @@ bool CheckFfmpeg()
 int main()
 {
 	int iSelection = 0;
+	bool hasEnded = false;
 
-	showTitle();
-
-	std::cout << "                                 Double Shot Audio Multi Tool v0.1\n";
-	std::cout << "                       Only use if you have ffmpeg installed and configured in cmd\n\n";
-
-	if (CheckFfmpeg())
+	while (!hasEnded)
 	{
-
-
-		std::cout << "Tools selection: \n";
-		std::cout << "1. Video Converter for Nuendo / Cubase \n";
-		std::cout << "2. Audio Extractor \n";
-		std::cout << "3. Audio Replacer for Video (MOV container with WAV) \n";
-		std::cout << "4. Audio Replacer for Video (MP4 container with AAC) \n";
-		std::cout << "5. WAV to MP3 converter (VBR 192k) \n\n";
-
-		std::cout << "Input your selection : ";
-
-		while (!(std::cin >> iSelection) || (iSelection < 1 || iSelection > 100)) // Input validation
+		if (CheckFfmpeg())
 		{
-			std::cout << "ERROR: Please enter a valid number : ";
-			std::cin.clear();
-			std::cin.ignore();
+			showTitle();
+
+			std::cout << "                                 Double Shot Audio Multi Tool v0.1\n";
+			std::cout << "                       Only use if you have ffmpeg installed and configured in cmd\n\n";
+
+			std::cout << "Tools selection: \n";
+			std::cout << "1. Video Converter for Nuendo / Cubase \n";
+			std::cout << "2. Audio Extractor \n";
+			std::cout << "3. Audio Replacer for Video (MOV container with WAV) \n";
+			std::cout << "4. Audio Replacer for Video (MP4 container with AAC) \n";
+			std::cout << "5. WAV to MP3 converter (VBR 192k) \n";
+			std::cout << "6. Quit\n\n";
+
+			std::cout << "Input your selection : ";
+
+			while (!(std::cin >> iSelection) || (iSelection < 1 || iSelection > 100)) // Input validation
+			{
+				std::cout << "ERROR: Please enter a valid number : ";
+				std::cin.clear();
+				std::cin.ignore();
+			}
+
+			std::cin.ignore(); // to ignore the \n character after enter!
+
+			switch (iSelection)
+			{
+			case 1:
+				ConvertVideo();
+				break;
+			case 2:
+				ExtractAudio();
+				break;
+			case 3:
+				CombineVideoAudioWav();
+				break;
+			case 4:
+				CombineVideoAudioAac();
+				break;
+			case 5:
+				ConvertAudioToMp3();
+				break;
+			case 6:
+				hasEnded = true;
+			default:
+				std::cout << "This is not a valid option! \n"; //TODO: when invalid selection is entered, ask user to input again
+				break;
+			}
 		}
-
-		std::cin.ignore(); // to ignore the \n character after enter!
-
-		switch (iSelection)
+		
+		else
 		{
-		case 1:
-			ConvertVideo();
-			break;
-		case 2:
-			ExtractAudio();
-			break;
-		case 3:
-			CombineVideoAudioWav();
-			break;
-		case 4:
-			CombineVideoAudioAac();
-			break;
-		case 5:
-			ConvertAudioToMp3();
-			break;
-		default:
-			std::cout << "This is not a valid option! \n"; //TODO: when invalid selection is entered, ask user to input again
-			break;
+			std::cout << "Program has ended. \n";
+			system("pause");
+			return 0;
 		}
-
-		//TODO: When program ends here, loop back to title.
-
-		std::cout << "Program has ended. \n";
-		system("pause");
-		return 0;
+	
 	}
-	else
-	{
-		std::cout << "Program has ended. \n";
-		system("pause");
-		return 0;
-	}
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
