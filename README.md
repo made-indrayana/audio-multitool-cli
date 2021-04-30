@@ -1,6 +1,6 @@
 # Double Shot Audio Multitool
 
-Alpha 1 Download: [Here](https://gitlab.com/DoubleShotAudio/double-shot-audio-multitool/-/releases)\
+Alpha 1 Download: Coming soon!\
 *(Download DSA Multitool in "Packages" to have .exe file)*
 
 Multitool is developed for a few video-audio related workflow as a C++ learning project. **Please pardon all the beginner programmer's mistake!**
