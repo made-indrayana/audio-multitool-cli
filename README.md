@@ -4,7 +4,7 @@ Alpha 1 Download: Coming soon!\
 *(Download DSA Multitool in "Packages" to have .exe file)*
 
 Multitool is developed for a few video-audio related workflow as a C++ learning project. **Please pardon all the beginner programmer's mistake!**
-At this moment this is a Windows-Only application. MacOS will follow in the future hopefully.
+At this moment this is a Windows-Only application.
 
 ***You have to have ffmpeg installed and configured to be used as a command in the command line to make this program to work.***
 FFMpeg Download and setup in Windows: [Link](https://video.stackexchange.com/questions/20495/how-do-i-set-up-and-use-ffmpeg-in-windows)
@@ -24,9 +24,7 @@ FFMpeg Download and setup in Windows: [Link](https://video.stackexchange.com/que
 5. WAV to MP3 converter (VBR 192k Quality)
 
 ## Planned Feature
-1. Batch converting (right now it only supports one file per process and terminates)
-2. Ambisonic Audio to Video embedder
-3. MacOS Build
+1. Ambisonic Audio to Video embedder
 
 --------------------------------------------------------------------------------------------------------------
 Best,\
