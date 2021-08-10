@@ -1,6 +1,6 @@
 # Double Shot Audio Multitool
 
-Multitool is a ffmpeg-wrapper developed for a few video-audio related workflow as a C++ learning project.
+Multitool is a ffmpeg-wrapper developed for a few video-audio related workflow.
 At this moment this is a Windows-Only application.
 
 ***You have to have ffmpeg installed and configured to be used as a command in the command line to make this program to work.***
