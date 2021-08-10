@@ -1,9 +1,6 @@
 # Double Shot Audio Multitool
 
-Alpha 1 Download: Coming soon!\
-*(Download DSA Multitool in "Packages" to have .exe file)*
-
-Multitool is developed for a few video-audio related workflow as a C++ learning project. **Please pardon all the beginner programmer's mistake!**
+Multitool is a ffmpeg-wrapper developed for a few video-audio related workflow as a C++ learning project.
 At this moment this is a Windows-Only application.
 
 ***You have to have ffmpeg installed and configured to be used as a command in the command line to make this program to work.***
@@ -25,9 +22,3 @@ FFMpeg Download and setup in Windows: [Link](https://video.stackexchange.com/que
 
 ## Planned Feature
 1. Ambisonic Audio to Video embedder
-
---------------------------------------------------------------------------------------------------------------
-Best,\
-Indra\
-Double Shot Audio\
-indra@doubleshot-audio.com
