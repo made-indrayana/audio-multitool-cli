@@ -1,4 +1,4 @@
-# Double Shot Audio Multitool
+# Indra's Audio Multitool for Command Line Interface
 
 Multitool is a ffmpeg-wrapper developed for a few video-audio related workflow.
 At this moment this is a Windows-Only application.
